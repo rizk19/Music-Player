@@ -69,7 +69,7 @@ class ViewController: UIViewController {
         
         // Check first music fave status
         if arrOfMusic[0].isFavorite! {
-            favMusicBtn.setImage(UIImage(systemName: "heart.fill"), for: .normal)
+             favMusicBtn.setImage(UIImage(systemName: "suit.heart.fill"), for: .normal)
         }
         
         // To notify the changeLyrics function when textView value changed
@@ -141,14 +141,12 @@ class ViewController: UIViewController {
         changeHeartIcon()
     }
     
-    
     func changeHeartIcon() {
         if arrOfMusic[currMusic].isFavorite! {
-            favMusicBtn.setImage(UIImage(systemName: "heart.fill"), for: .normal)
-        } else {
-            favMusicBtn.setImage(UIImage(systemName: "heart"), for: .normal)
-        }
-        
+            favMusicBtn.setImage(UIImage(systemName: "suit.heart.fill"), for: .normal)
+      } else {
+        favMusicBtn.setImage(UIImage(systemName: "suit.heart"), for: .normal)
+      }
     }
 
 }
