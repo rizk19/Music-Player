@@ -57,6 +57,16 @@ class ViewController: UIViewController {
         // Set up background
         imageBackground.image = UIImage(named: "happy.jpg")
         
+        // To blur background (put this on your ViewController's viewDidLoad())
+        let blurEffect = UIBlurEffect(style: .light)
+        let blurEffectView = UIVisualEffectView()
+        blurEffectView.frame = CGRect(x: 0, y: 0, width: imageBackground.frame.width + 30 , height: imageBackground.frame.height)
+        blurEffectView.center = imageBackground.center
+        self.imageBackground.addSubview(blurEffectView)
+        UIView.animate(withDuration: 5) {
+            blurEffectView.effect = blurEffect
+        }
+        
         // Check first music fave status
         if arrOfMusic[0].isFavorite! {
             favMusicBtn.setImage(UIImage(systemName: "heart.fill"), for: .normal)
